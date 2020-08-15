@@ -28,23 +28,23 @@ const showPage = (list, page) => {
    functionality to the pagination buttons.
 ***/
 const appendPageLinks = (list) => {
-   // determine total number of pages
-   const numOfPages = list.length / itemsPerPage; 
+   const numOfPages = Math.ceil(list.length / itemsPerPage); // determine total number of pages
 
    // Create the div element with a nested UL element
    const div = document.createElement('div'); 
    div.className = 'pagination'; 
    const page = document.querySelector('.page');
    page.appendChild(div);
+
    const ul = document.createElement('ul');
    div.appendChild(ul);
 
    // create the LIs 
-   for(let i = 1; i < numOfPages; i++) {
+   for(let i = 0; i < numOfPages; i++) {
       const li = document.createElement('li');
       const a = document.createElement('a');
       a.setAttribute('href', '#');
-      a.textContent = i;
+      a.textContent = i + 1;
       li.appendChild(a);
       ul.appendChild(li);
 
