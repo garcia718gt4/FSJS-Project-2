@@ -48,13 +48,13 @@ const appendPageLinks = (list) => {
       li.appendChild(a);
       ul.appendChild(li);
 
-      // Remove the active class name when the pagination is clicked
-      a.addEventListener('click', (e) => {
+   // Remove the active class name when the pagination is clicked
+   a.addEventListener('click', (e) => {
          const alinks = document.querySelectorAll('a');
          for(let i = 0; i < alinks.length; i++ ) {
             alinks[i].className = '';  
          }
-
+         
          e.target.className = ' active';
          const pageLink = e.target.textContent; 
          showPage(list, pageLink); 
